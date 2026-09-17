@@ -1,0 +1,931 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\userfile\\circuit\\pc_power_controller\\circuit\\pc_power_controller.kicad_sch")
+		(date "2026-09-18T00:02:44")
+		(tool "Eeschema 10.0.5")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title)
+				(company)
+				(rev)
+				(date)
+				(source "pc_power_controller.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "J1")
+			(value "PWR_SW_HEADER")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x02")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6fd9a358-4582-4c12-836f-ff3e8da9dd46")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "PLED_HEADER")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x02")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ca3a4e16-8ae3-499a-b020-c99e42f8638d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "330")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9b22b12e-8b19-4c88-bf91-0d5d4d7ffb8b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "10k")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "65e62141-a27c-4bc7-9258-2a5bae574232")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "TLP225A(F)")
+			(footprint "Package_DIP:DIP-4_W7.62mm_Socket")
+			(fields
+				(field
+					(name "Note") "Substitute: generic 4-pin optocoupler symbol / DIP-4 socket footprint. TLP225A(F) PhotoMOS relay (pin-compatible replacement for TLP222AF, which is out of stock)")
+				(field
+					(name "Footprint") "Package_DIP:DIP-4_W7.62mm_Socket")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "Optocoupler_Generic_4Pin")
+				(description "")
+			)
+			(property
+				(name "Note")
+				(value "Substitute: generic 4-pin optocoupler symbol / DIP-4 socket footprint. TLP225A(F) PhotoMOS relay (pin-compatible replacement for TLP222AF, which is out of stock)")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "675a83db-d095-42a5-a533-23bbb885a4e8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "TLP621-1")
+			(footprint "Package_DIP:DIP-4_W7.62mm_Socket")
+			(fields
+				(field
+					(name "Note") "Substitute: generic 4-pin optocoupler symbol / DIP-4 socket footprint for TLP621-1")
+				(field
+					(name "Footprint") "Package_DIP:DIP-4_W7.62mm_Socket")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "Optocoupler_Generic_4Pin")
+				(description "")
+			)
+			(property
+				(name "Note")
+				(value "Substitute: generic 4-pin optocoupler symbol / DIP-4 socket footprint for TLP621-1")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "755d5d69-9099-4b48-b0aa-6524bddda7e0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "Seeed_XIAO_ESP32C3")
+			(footprint "Local:Seeed_XIAO_ESP32C3")
+			(fields
+				(field
+					(name "Note") "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin5=D1/GPIO3 (relay control out), Pin6=D2/GPIO4 (PLED monitor in)")
+				(field
+					(name "Footprint") "Local:Seeed_XIAO_ESP32C3")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "Seeed_XIAO_ESP32C3")
+				(description "")
+			)
+			(property
+				(name "Note")
+				(value "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin5=D1/GPIO3 (relay control out), Pin6=D2/GPIO4 (PLED monitor in)")
+			)
+			(property
+				(name "Sheetname")
+				(value "pc_power_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pc_power_controller.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "993f8fa9-7e57-4d3d-922c-aaeb08d953a0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x02")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x02")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R")
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "Optocoupler_Generic_4Pin")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Optocoupler_Generic_4Pin")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "Seeed_XIAO_ESP32C3")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "Seeed_XIAO_ESP32C3")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "5V")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "3V3")
+					(type "power_out")
+				)
+				(pin
+					(num "4")
+					(name "D0/GPIO2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "D1/GPIO3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "D2/GPIO4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "D3/GPIO5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "D4/GPIO6")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "D5/GPIO7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "D6/GPIO21")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "D7/GPIO20")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "D8/GPIO8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "D9/GPIO9")
+					(type "bidirectional")
+				)
+				(pin
+					(num "14")
+					(name "D10/GPIO10")
+					(type "bidirectional")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Connector_Generic")
+			(uri "C:/Program Files/KiCad/10.0/share/kicad/symbols/Connector_Generic.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "C:/Program Files/KiCad/10.0/share/kicad/symbols/Device.kicad_sym")
+		)
+		(library
+			(logical "Local")
+			(uri "${KIPRJMOD}/Local.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "3V3_3")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "2")
+			(name "/GPIO_MON")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "D2/GPIO4_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "3")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "4")
+			(name "Net-(J1-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "Net-(J1-Pin_2)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "Net-(J2-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(J2-Pin_2)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "Net-(R1-Pad1)")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "Net-(U3-D1{slash}GPIO3)")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "D1/GPIO3_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "10")
+			(name "unconnected-(U3-5V-Pad1)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "5V_1")
+				(pintype "power_in+no_connect")
+			)
+		)
+		(net
+			(code "11")
+			(name "unconnected-(U3-D0{slash}GPIO2-Pad4)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "D0/GPIO2_4")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "12")
+			(name "unconnected-(U3-D3{slash}GPIO5-Pad7)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "D3/GPIO5_7")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "13")
+			(name "unconnected-(U3-D4{slash}GPIO6-Pad8)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "D4/GPIO6_8")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "14")
+			(name "unconnected-(U3-D5{slash}GPIO7-Pad9)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "9")
+				(pinfunction "D5/GPIO7_9")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "15")
+			(name "unconnected-(U3-D6{slash}GPIO21-Pad10)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "10")
+				(pinfunction "D6/GPIO21_10")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "16")
+			(name "unconnected-(U3-D7{slash}GPIO20-Pad11)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "11")
+				(pinfunction "D7/GPIO20_11")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "17")
+			(name "unconnected-(U3-D8{slash}GPIO8-Pad12)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "12")
+				(pinfunction "D8/GPIO8_12")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(U3-D9{slash}GPIO9-Pad13)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "13")
+				(pinfunction "D9/GPIO9_13")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(U3-D10{slash}GPIO10-Pad14)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "14")
+				(pinfunction "D10/GPIO10_14")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+	)
+)

@@ -1,0 +1,4 @@
+tools/
+firmware/
+*.lck
+*-backups/
