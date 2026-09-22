@@ -1,0 +1,150 @@
+esphome:
+  name: pc-power-controller
+  friendly_name: "デスクトップPC電源コントローラー"
+  comment: "Seeed XIAO ESP32C3 based PC power control & PLED state monitor"
+  project:
+    name: "custom.pc_power_controller"
+    version: "1.0"
+
+# Seeed Studio XIAO ESP32C3.
+# NOTE: if your ESPHome version doesn't recognize this board id, "esp32-c3-devkitm-1"
+# is a safe generic ESP32-C3 fallback -- the XIAO uses the same SoC/flash layout.
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+logger:
+
+# Home Assistant native API (encrypted). Generate a key with:
+#   python3 -c "import secrets, base64; print(base64.b64encode(secrets.token_bytes(32)).decode())"
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Fallback hotspot if Wi-Fi connection fails, so you can still reach the
+  # device to fix credentials without a USB cable.
+  ap:
+    ssid: "Pc-Power-Controller Fallback"
+    password: !secret wifi_ap_password
+
+captive_portal:
+
+# --- Hardware pin map (see ../circuit/ for the schematic) -------------------
+# D1/GPIO3  -> R1(330R) -> TLP225A(F) PhotoMOS relay -> PWR_SW header (momentary short)
+# D2/GPIO4  <- TLP621-1 optocoupler <- PLED (active-low, external 10k pull-up on board)
+substitutions:
+  relay_ctrl_pin: GPIO3
+  pled_mon_pin: GPIO4
+
+# The relay is driven as a raw output (not a switch) because it must never be
+# left ON -- both "actions" below are always a bounded pulse, never a toggle.
+output:
+  - platform: gpio
+    pin: ${relay_ctrl_pin}
+    id: pwr_relay_output
+
+# ---- Normal operation: short (200ms) contact closure -----------------------
+# Mirrors a normal human press of the PC's power button: powers the PC on
+# when it's off, or triggers whatever Windows is configured to do on a power
+# button press when it's on (this project assumes that's configured to
+# Sleep -- see README for why Sleep, not "turn off display", is required for
+# the blink-based state detection below to mean anything).
+button:
+  - platform: template
+    name: "PC電源ボタン"
+    id: pc_power_button
+    icon: "mdi:power"
+    on_press:
+      - output.turn_on: pwr_relay_output
+      - delay: 200ms
+      - output.turn_off: pwr_relay_output
+
+  # ---- Forced power-off: long (5s) contact closure --------------------------
+  # ATX motherboards hard-cut power after ~4s of continuous PWR_SW closure;
+  # 5s gives margin. This is a last-resort action for a hung OS -- it is NOT
+  # a graceful shutdown and can cause data loss, so it is deliberately kept
+  # as a *separate* entity/script from the normal button above rather than a
+  # "long press" of the same control, to avoid accidental activation.
+  - platform: template
+    name: "PC強制電源OFF"
+    id: pc_forced_power_off_button
+    icon: "mdi:power-off"
+    on_press:
+      - script.execute: forced_power_off_script
+
+script:
+  - id: forced_power_off_script
+    then:
+      - logger.log: "Forced power-off: holding PWR_SW relay closed for 5s"
+      - output.turn_on: pwr_relay_output
+      - delay: 5000ms
+      - output.turn_off: pwr_relay_output
+
+# ---- PLED monitoring --------------------------------------------------------
+# Raw logic-level view of the power LED, inverted so that HA sees
+# true == "LED is lit" (the optocoupler pulls GPIO4 low when the LED is on).
+# A short debounce filter absorbs any switching noise from the optocoupler.
+#
+# ESPHome does not allow the same pin to be claimed by two components (e.g.
+# gpio binary_sensor + pulse_counter -> "Pin 4 is used in multiple places"),
+# so blink detection reuses this one binary_sensor: every state change bumps
+# a counter (below), and the text_sensor reads/resets it every 2s.
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: ${pled_mon_pin}
+      mode: INPUT
+      inverted: true
+    name: "PC電源LED状態 (生値)"
+    id: pled_raw
+    device_class: power
+    filters:
+      - delayed_on: 20ms
+      - delayed_off: 20ms
+    on_state:
+      - lambda: |-
+          id(pled_transitions)++;
+
+# Number of PLED edges seen since the text_sensor last ran. Most ATX
+# motherboards blink PLED at roughly 1Hz while the PC is asleep (ACPI S3),
+# i.e. ~2 edges per 2s window.
+globals:
+  - id: pled_transitions
+    type: int
+    restore_value: false
+    initial_value: "0"
+
+# ---- Combined 3-state power status -----------------------------------------
+# "on"       -- PLED solid on (ACPI S0, PC fully awake)
+# "blinking" -- PLED blinking (ACPI S1-S3, PC asleep) -- requires Windows'
+#               power button / lid action to be set to Sleep, not "turn off
+#               display", since a display-off PC stays in S0 and PLED never
+#               blinks (see README)
+# "off"      -- PLED solid off (ACPI S5 / shut down, or unplugged)
+text_sensor:
+  - platform: template
+    name: "PC電源状態"
+    id: pc_power_state
+    icon: "mdi:desktop-tower-monitor"
+    update_interval: 2s
+    lambda: |-
+      // >=2 edges in the 2s window = blinking. A single edge is just a
+      // one-off on/off change (PC powering up/down), not a blink.
+      int edges = id(pled_transitions);
+      id(pled_transitions) = 0;
+      if (edges >= 2) {
+        return {"blinking"};
+      } else if (id(pled_raw).state) {
+        return {"on"};
+      } else {
+        return {"off"};
+      }

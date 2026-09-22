@@ -263,9 +263,13 @@ w('''    (symbol "power:PWR_FLAG" (power) (pin_names (offset 0)) (in_bom yes) (o
       )
     )''')
 
-# Local:Seeed_XIAO_ESP32C3 (14-pin module, pin numbering matches the
-# castellated-pad footprint: 1-7 down the left side, 8-14 up the right side,
-# pin1 opposite pin14, pin7 opposite pin8 -- same order Seeed uses on silkscreen)
+# Local:Seeed_XIAO_ESP32C3 (14-pin module). Pin numbering/positions match the
+# REAL physical silkscreen layout confirmed from Seeed's own pinout docs:
+# left column, top-to-bottom (near the USB-C connector at the top): D0, D1,
+# D2, D3, D4, D5, D6 (pins 1-7); right column, bottom-to-top: D7, D8, D9,
+# D10, 3V3, GND, 5V (pins 8-14). Note 5V/GND/3V3 are NOT the first pins next
+# to the USB connector -- they're clustered at the far end of the right
+# column, directly across from D0-D2.
 w('''    (symbol "Local:Seeed_XIAO_ESP32C3" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at 0 10.16 0)
         (effects (font (size 1.27 1.27)))
@@ -286,60 +290,60 @@ w('''    (symbol "Local:Seeed_XIAO_ESP32C3" (pin_names (offset 1.016) hide) (in_
         )
       )
       (symbol "Seeed_XIAO_ESP32C3_1_1"
-        (pin power_in line (at -10.16 7.62 0) (length 2.54)
-          (name "5V" (effects (font (size 1.27 1.27))))
+        (pin bidirectional line (at -10.16 7.62 0) (length 2.54)
+          (name "D0/GPIO2" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin power_in line (at -10.16 5.08 0) (length 2.54)
-          (name "GND" (effects (font (size 1.27 1.27))))
+        (pin bidirectional line (at -10.16 5.08 0) (length 2.54)
+          (name "D1/GPIO3" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin power_out line (at -10.16 2.54 0) (length 2.54)
-          (name "3V3" (effects (font (size 1.27 1.27))))
+        (pin bidirectional line (at -10.16 2.54 0) (length 2.54)
+          (name "D2/GPIO4" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at -10.16 0 0) (length 2.54)
-          (name "D0/GPIO2" (effects (font (size 1.27 1.27))))
+          (name "D3/GPIO5" (effects (font (size 1.27 1.27))))
           (number "4" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at -10.16 -2.54 0) (length 2.54)
-          (name "D1/GPIO3" (effects (font (size 1.27 1.27))))
+          (name "D4/GPIO6" (effects (font (size 1.27 1.27))))
           (number "5" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at -10.16 -5.08 0) (length 2.54)
-          (name "D2/GPIO4" (effects (font (size 1.27 1.27))))
+          (name "D5/GPIO7" (effects (font (size 1.27 1.27))))
           (number "6" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at -10.16 -7.62 0) (length 2.54)
-          (name "D3/GPIO5" (effects (font (size 1.27 1.27))))
+          (name "D6/GPIO21" (effects (font (size 1.27 1.27))))
           (number "7" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at 10.16 -7.62 180) (length 2.54)
-          (name "D4/GPIO6" (effects (font (size 1.27 1.27))))
+          (name "D7/GPIO20" (effects (font (size 1.27 1.27))))
           (number "8" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at 10.16 -5.08 180) (length 2.54)
-          (name "D5/GPIO7" (effects (font (size 1.27 1.27))))
+          (name "D8/GPIO8" (effects (font (size 1.27 1.27))))
           (number "9" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at 10.16 -2.54 180) (length 2.54)
-          (name "D6/GPIO21" (effects (font (size 1.27 1.27))))
+          (name "D9/GPIO9" (effects (font (size 1.27 1.27))))
           (number "10" (effects (font (size 1.27 1.27))))
         )
         (pin bidirectional line (at 10.16 0 180) (length 2.54)
-          (name "D7/GPIO20" (effects (font (size 1.27 1.27))))
+          (name "D10/GPIO10" (effects (font (size 1.27 1.27))))
           (number "11" (effects (font (size 1.27 1.27))))
         )
-        (pin bidirectional line (at 10.16 2.54 180) (length 2.54)
-          (name "D8/GPIO8" (effects (font (size 1.27 1.27))))
+        (pin power_out line (at 10.16 2.54 180) (length 2.54)
+          (name "3V3" (effects (font (size 1.27 1.27))))
           (number "12" (effects (font (size 1.27 1.27))))
         )
-        (pin bidirectional line (at 10.16 5.08 180) (length 2.54)
-          (name "D9/GPIO9" (effects (font (size 1.27 1.27))))
+        (pin power_in line (at 10.16 5.08 180) (length 2.54)
+          (name "GND" (effects (font (size 1.27 1.27))))
           (number "13" (effects (font (size 1.27 1.27))))
         )
-        (pin bidirectional line (at 10.16 7.62 180) (length 2.54)
-          (name "D10/GPIO10" (effects (font (size 1.27 1.27))))
+        (pin power_in line (at 10.16 7.62 180) (length 2.54)
+          (name "5V" (effects (font (size 1.27 1.27))))
           (number "14" (effects (font (size 1.27 1.27))))
         )
       )
@@ -438,7 +442,10 @@ p_R2_1 = u(); p_R2_2 = u()
 add_symbol("Device:R", "R2", "10k", R2_pos, 0,
            {"1": p_R2_1, "2": p_R2_2}, footprint="Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
 
-PWR3V3_1_pos = (88.9, 45.72)
+PWR3V3_1_pos = (88.9, 25.4)  # above R2 pin1 -- must NOT share y with the
+                              # GPIO_MON stub on R2 pin2, or the straight
+                              # vertical wire down to it would electrically
+                              # merge the two nets
 p_3V3_1 = u()
 add_symbol("power:+3V3", "#PWR03", "+3V3", PWR3V3_1_pos, 0, {"1": p_3V3_1}, in_bom=False, on_board=False)
 
@@ -450,13 +457,13 @@ XIAO_pos = (15.24, 35.56)
 xiao_pins = {str(i): u() for i in range(1, 15)}
 add_symbol("Local:Seeed_XIAO_ESP32C3", "U3", "Seeed_XIAO_ESP32C3", XIAO_pos, 0,
            xiao_pins, footprint="Local:Seeed_XIAO_ESP32C3",
-           extra_props=[("Note", "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin5=D1/GPIO3 (relay control out), Pin6=D2/GPIO4 (PLED monitor in)")])
+           extra_props=[("Note", "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin2=D1/GPIO3 (relay control out), Pin3=D2/GPIO4 (PLED monitor in). Pin order matches Seeed's real silkscreen: left column D0-D6 (pins 1-7), right column D7-D10,3V3,GND,5V (pins 8-14)")])
 
-GND3_pos = (5.08, 30.48)  # coincides with XIAO pin2 (GND)
+GND3_pos = (25.4, 30.48)  # coincides with XIAO pin13 (GND)
 p_GND3 = u()
 add_symbol("power:GND", "#PWR04", "GND", GND3_pos, 0, {"1": p_GND3}, in_bom=False, on_board=False)
 
-PWR3V3_2_pos = (5.08, 33.02)  # coincides with XIAO pin3 (3V3)
+PWR3V3_2_pos = (25.4, 33.02)  # coincides with XIAO pin12 (3V3)
 p_3V3_2 = u()
 add_symbol("power:+3V3", "#PWR05", "+3V3", PWR3V3_2_pos, 0, {"1": p_3V3_2}, in_bom=False, on_board=False)
 
@@ -518,7 +525,10 @@ for n, ry in right_rel_y.items():
     XIAO_pin[n] = pin_abs(XIAO_pos, (10.16, ry))
 
 def route(p1, p2):
-    """Route a possibly-bent wire: horizontal from p1 then vertical into p2."""
+    """Route a possibly-bent wire: horizontal from p1 then vertical into p2.
+    Only used for short local stubs to a power symbol (never for inter-
+    component signal runs -- those all go through stub_label() instead so
+    the diagram doesn't have long wires criss-crossing the page)."""
     if p1[0] == p2[0] or p1[1] == p2[1]:
         wire(p1, p2)
     else:
@@ -526,30 +536,49 @@ def route(p1, p2):
         wire(p1, bend)
         wire(bend, p2)
 
-route(XIAO_pin[5], R1_p2)     # D1/GPIO3 -> R1 -> U1 -> J1 (control path)
-route(R1_p1, U1_p1)
-route(U1_p2, GND1_pos)
-route(U1_p3, J1_p1)
-route(U1_p4, J1_p2)
+def stub_label(pin, direction, text):
+    """Draw a short (1 grid step) stub outward from `pin` in `direction`
+    (dx, dy each in {-1, 0, 1}) and place a same-named label at its end.
+    Every signal connection between two components uses this instead of a
+    direct wire, so nets are joined by label text rather than long routed
+    wires across the page."""
+    end = (pin[0] + direction[0] * 2.54, pin[1] + direction[1] * 2.54)
+    wire(pin, end)
+    label(text, end)
 
-route(J2_p1, U2_p1)
-route(J2_p2, U2_p2)
+# ---- Control path: XIAO D1/GPIO3 -> R1 -> U1(TLP225A(F)) -> J1 (PWR_SW_HEADER) ----
+stub_label(XIAO_pin[2], (-1, 0), "GPIO_CTRL")
+stub_label(R1_p2, (0, 1), "GPIO_CTRL")
+
+stub_label(R1_p1, (0, -1), "CTRL_R1_U1")
+stub_label(U1_p1, (-1, 0), "CTRL_R1_U1")
+
+route(U1_p2, GND1_pos)
+
+stub_label(U1_p3, (1, 0), "PWR_SW_A")
+stub_label(J1_p1, (-1, 0), "PWR_SW_A")
+stub_label(U1_p4, (1, 0), "PWR_SW_B")
+stub_label(J1_p2, (-1, 0), "PWR_SW_B")
+
+# ---- Monitor path: J2 (PLED_HEADER) -> U2(TLP621-1) -> GND / XIAO D2/GPIO4 (+ R2 pull-up) ----
+stub_label(J2_p1, (-1, 0), "PLED_A")
+stub_label(U2_p1, (-1, 0), "PLED_A")
+stub_label(J2_p2, (-1, 0), "PLED_B")
+stub_label(U2_p2, (-1, 0), "PLED_B")
+
 route(U2_p3, GND2_pos)
 
-gpio_mon_stub = (50.8, U2_p4[1])
-route(U2_p4, gpio_mon_stub)
-label("GPIO_MON", gpio_mon_stub)
-
-route(XIAO_pin[6], R2_p2)     # D2/GPIO4 <- R2 pull-up / U2 collector (monitor path)
-label("GPIO_MON", XIAO_pin[6])
+stub_label(U2_p4, (1, 0), "GPIO_MON")
+stub_label(R2_p2, (0, 1), "GPIO_MON")
+stub_label(XIAO_pin[3], (-1, 0), "GPIO_MON")
 
 route(R2_p1, PWR3V3_1_pos)
 
 # XIAO bulk GND / 3V3 (power symbols placed exactly at the pins, no wire needed)
-# (implicit connection: GND3_pos == XIAO_pin[2], PWR3V3_2_pos == XIAO_pin[3])
+# (implicit connection: GND3_pos == XIAO_pin[13], PWR3V3_2_pos == XIAO_pin[12])
 
-# Unused XIAO pins: 5V(1), D0(4), D3(7), D4(8), D5(9), D6(10), D7(11), D8(12), D9(13), D10(14)
-for n in (1, 4, 7, 8, 9, 10, 11, 12, 13, 14):
+# Unused XIAO pins: D0(1), D3(4), D4(5), D5(6), D6(7), D7(8), D8(9), D9(10), D10(11), 5V(14)
+for n in (1, 4, 5, 6, 7, 8, 9, 10, 11, 14):
     no_connect(XIAO_pin[n])
 
 w('  (sheet_instances')

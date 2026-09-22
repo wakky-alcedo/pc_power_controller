@@ -104,7 +104,10 @@ U3 = place(load_local_fp("Seeed_XIAO_ESP32C3"),
            "U3", "Seeed_XIAO_ESP32C3", 17.78, 53.34)
 
 # ---- Net assignments (mirrors the schematic connectivity) ----
-assign(U3, "5", "GPIO_CTRL")   # D1/GPIO3 -> R1
+# XIAO pad numbers follow the REAL physical silkscreen order: left column
+# D0-D6 = pads 1-7, right column D7-D10,3V3,GND,5V = pads 8-14. So D1=pad2,
+# D2=pad3, 3V3=pad12, GND=pad13 (NOT pad5/6/2/3 as an earlier revision assumed).
+assign(U3, "2", "GPIO_CTRL")   # D1/GPIO3 -> R1
 assign(R1, "2", "GPIO_CTRL")
 assign(R1, "1", "R1_U1")
 assign(U1, "1", "R1_U1")
@@ -122,11 +125,11 @@ assign(U2, "3", "GND")
 assign(U2, "4", "GPIO_MON")
 assign(R2, "2", "GPIO_MON")
 assign(R2, "1", "3V3")
-assign(U3, "6", "GPIO_MON")    # D2/GPIO4 <- R2 / U2 collector
+assign(U3, "3", "GPIO_MON")    # D2/GPIO4 <- R2 / U2 collector
 
-assign(U3, "2", "GND")         # XIAO GND
-assign(U3, "3", "3V3")         # XIAO 3V3 (module's own regulator output)
-# XIAO pins 1 (5V), 4, 7-14 are intentionally left with no net (unused).
+assign(U3, "13", "GND")        # XIAO GND
+assign(U3, "12", "3V3")        # XIAO 3V3 (module's own regulator output)
+# XIAO pins 1 (D0), 4-11 (D3-D10), 14 (5V) are intentionally left with no net (unused).
 
 board.BuildConnectivity()
 pcbnew.SaveBoard(OUT_PCB, board)

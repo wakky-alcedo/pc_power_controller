@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\userfile\\circuit\\pc_power_controller\\circuit\\pc_power_controller.kicad_sch")
-		(date "2026-09-18T00:02:44")
+		(date "2026-09-18T12:35:42")
 		(tool "Eeschema 10.0.5")
 		(sheet
 			(number "1")
@@ -85,7 +85,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6fd9a358-4582-4c12-836f-ff3e8da9dd46")
+			(tstamps "76855ea5-b6c8-4dd0-b4e4-e326b1721282")
 			(units
 				(unit
 					(name "A")
@@ -131,7 +131,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ca3a4e16-8ae3-499a-b020-c99e42f8638d")
+			(tstamps "e5285dd3-3134-4ee0-9e0a-7d70076a0dbf")
 			(units
 				(unit
 					(name "A")
@@ -177,7 +177,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "9b22b12e-8b19-4c88-bf91-0d5d4d7ffb8b")
+			(tstamps "03bc017a-dfca-41f5-8e5e-b6941e47c5fc")
 			(units
 				(unit
 					(name "A")
@@ -223,7 +223,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "65e62141-a27c-4bc7-9258-2a5bae574232")
+			(tstamps "f44ee4bf-7dab-48f7-99ad-9365fa5d7257")
 			(units
 				(unit
 					(name "A")
@@ -275,7 +275,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "675a83db-d095-42a5-a533-23bbb885a4e8")
+			(tstamps "18591c8b-a82b-45d4-bbd3-e7082e6f8423")
 			(units
 				(unit
 					(name "A")
@@ -333,7 +333,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "755d5d69-9099-4b48-b0aa-6524bddda7e0")
+			(tstamps "1a248a56-772d-4a15-af9d-3eb01473f6bf")
 			(units
 				(unit
 					(name "A")
@@ -360,7 +360,7 @@
 			(footprint "Local:Seeed_XIAO_ESP32C3")
 			(fields
 				(field
-					(name "Note") "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin5=D1/GPIO3 (relay control out), Pin6=D2/GPIO4 (PLED monitor in)")
+					(name "Note") "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin2=D1/GPIO3 (relay control out), Pin3=D2/GPIO4 (PLED monitor in). Pin order matches Seeed's real silkscreen: left column D0-D6 (pins 1-7), right column D7-D10,3V3,GND,5V (pins 8-14)")
 				(field
 					(name "Footprint") "Local:Seeed_XIAO_ESP32C3")
 				(field
@@ -377,7 +377,7 @@
 			)
 			(property
 				(name "Note")
-				(value "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin5=D1/GPIO3 (relay control out), Pin6=D2/GPIO4 (PLED monitor in)")
+				(value "Seeed Studio XIAO ESP32C3, mounted on 2x7 2.54mm female headers. Pin2=D1/GPIO3 (relay control out), Pin3=D2/GPIO4 (PLED monitor in). Pin order matches Seeed's real silkscreen: left column D0-D6 (pins 1-7), right column D7-D10,3V3,GND,5V (pins 8-14)")
 			)
 			(property
 				(name "Sheetname")
@@ -391,7 +391,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "993f8fa9-7e57-4d3d-922c-aaeb08d953a0")
+			(tstamps "c25029ba-e97c-4ac0-a82b-9c7a5d4b6c2f")
 			(units
 				(unit
 					(name "A")
@@ -570,73 +570,73 @@
 			(pins
 				(pin
 					(num "1")
-					(name "5V")
-					(type "power_in")
-				)
-				(pin
-					(num "2")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "3")
-					(name "3V3")
-					(type "power_out")
-				)
-				(pin
-					(num "4")
 					(name "D0/GPIO2")
 					(type "bidirectional")
 				)
 				(pin
-					(num "5")
+					(num "2")
 					(name "D1/GPIO3")
 					(type "bidirectional")
 				)
 				(pin
-					(num "6")
+					(num "3")
 					(name "D2/GPIO4")
 					(type "bidirectional")
 				)
 				(pin
-					(num "7")
+					(num "4")
 					(name "D3/GPIO5")
 					(type "bidirectional")
 				)
 				(pin
-					(num "8")
+					(num "5")
 					(name "D4/GPIO6")
 					(type "bidirectional")
 				)
 				(pin
-					(num "9")
+					(num "6")
 					(name "D5/GPIO7")
 					(type "bidirectional")
 				)
 				(pin
-					(num "10")
+					(num "7")
 					(name "D6/GPIO21")
 					(type "bidirectional")
 				)
 				(pin
-					(num "11")
+					(num "8")
 					(name "D7/GPIO20")
 					(type "bidirectional")
 				)
 				(pin
-					(num "12")
+					(num "9")
 					(name "D8/GPIO8")
 					(type "bidirectional")
 				)
 				(pin
-					(num "13")
+					(num "10")
 					(name "D9/GPIO9")
 					(type "bidirectional")
 				)
 				(pin
-					(num "14")
+					(num "11")
 					(name "D10/GPIO10")
 					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "3V3")
+					(type "power_out")
+				)
+				(pin
+					(num "13")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "14")
+					(name "5V")
+					(type "power_in")
 				)
 			)
 		)
@@ -667,13 +667,45 @@
 			)
 			(node
 				(ref "U3")
-				(pin "3")
-				(pinfunction "3V3_3")
+				(pin "12")
+				(pinfunction "3V3_12")
 				(pintype "power_out")
 			)
 		)
 		(net
 			(code "2")
+			(name "/CTRL_R1_U1")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "3")
+			(name "/GPIO_CTRL")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "D1/GPIO3_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
 			(name "/GPIO_MON")
 			(class "Default")
 			(node
@@ -689,13 +721,81 @@
 			)
 			(node
 				(ref "U3")
-				(pin "6")
-				(pinfunction "D2/GPIO4_6")
+				(pin "3")
+				(pinfunction "D2/GPIO4_3")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "3")
+			(code "5")
+			(name "/PLED_A")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "/PLED_B")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "/PWR_SW_A")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "3_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "/PWR_SW_B")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "4_4")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
 			(name "GND")
 			(class "Default")
 			(node
@@ -712,218 +812,118 @@
 			)
 			(node
 				(ref "U3")
-				(pin "2")
-				(pinfunction "GND_2")
+				(pin "13")
+				(pinfunction "GND_13")
 				(pintype "power_in")
 			)
 		)
 		(net
-			(code "4")
-			(name "Net-(J1-Pin_1)")
-			(class "Default")
-			(node
-				(ref "J1")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "3")
-				(pinfunction "3_3")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "5")
-			(name "Net-(J1-Pin_2)")
-			(class "Default")
-			(node
-				(ref "J1")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "4")
-				(pinfunction "4_4")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "6")
-			(name "Net-(J2-Pin_1)")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U2")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "7")
-			(name "Net-(J2-Pin_2)")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U2")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "8")
-			(name "Net-(R1-Pad1)")
-			(class "Default")
-			(node
-				(ref "R1")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "9")
-			(name "Net-(U3-D1{slash}GPIO3)")
-			(class "Default")
-			(node
-				(ref "R1")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U3")
-				(pin "5")
-				(pinfunction "D1/GPIO3_5")
-				(pintype "bidirectional")
-			)
-		)
-		(net
 			(code "10")
-			(name "unconnected-(U3-5V-Pad1)")
+			(name "unconnected-(U3-5V-Pad14)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "1")
-				(pinfunction "5V_1")
+				(pin "14")
+				(pinfunction "5V_14")
 				(pintype "power_in+no_connect")
 			)
 		)
 		(net
 			(code "11")
-			(name "unconnected-(U3-D0{slash}GPIO2-Pad4)")
+			(name "unconnected-(U3-D0{slash}GPIO2-Pad1)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "4")
-				(pinfunction "D0/GPIO2_4")
+				(pin "1")
+				(pinfunction "D0/GPIO2_1")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "12")
-			(name "unconnected-(U3-D3{slash}GPIO5-Pad7)")
+			(name "unconnected-(U3-D3{slash}GPIO5-Pad4)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "7")
-				(pinfunction "D3/GPIO5_7")
+				(pin "4")
+				(pinfunction "D3/GPIO5_4")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "13")
-			(name "unconnected-(U3-D4{slash}GPIO6-Pad8)")
+			(name "unconnected-(U3-D4{slash}GPIO6-Pad5)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "8")
-				(pinfunction "D4/GPIO6_8")
+				(pin "5")
+				(pinfunction "D4/GPIO6_5")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "14")
-			(name "unconnected-(U3-D5{slash}GPIO7-Pad9)")
+			(name "unconnected-(U3-D5{slash}GPIO7-Pad6)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "9")
-				(pinfunction "D5/GPIO7_9")
+				(pin "6")
+				(pinfunction "D5/GPIO7_6")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "15")
-			(name "unconnected-(U3-D6{slash}GPIO21-Pad10)")
+			(name "unconnected-(U3-D6{slash}GPIO21-Pad7)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "10")
-				(pinfunction "D6/GPIO21_10")
+				(pin "7")
+				(pinfunction "D6/GPIO21_7")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "16")
-			(name "unconnected-(U3-D7{slash}GPIO20-Pad11)")
+			(name "unconnected-(U3-D7{slash}GPIO20-Pad8)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "11")
-				(pinfunction "D7/GPIO20_11")
+				(pin "8")
+				(pinfunction "D7/GPIO20_8")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "17")
-			(name "unconnected-(U3-D8{slash}GPIO8-Pad12)")
+			(name "unconnected-(U3-D8{slash}GPIO8-Pad9)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "12")
-				(pinfunction "D8/GPIO8_12")
+				(pin "9")
+				(pinfunction "D8/GPIO8_9")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "18")
-			(name "unconnected-(U3-D9{slash}GPIO9-Pad13)")
+			(name "unconnected-(U3-D9{slash}GPIO9-Pad10)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "13")
-				(pinfunction "D9/GPIO9_13")
+				(pin "10")
+				(pinfunction "D9/GPIO9_10")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "19")
-			(name "unconnected-(U3-D10{slash}GPIO10-Pad14)")
+			(name "unconnected-(U3-D10{slash}GPIO10-Pad11)")
 			(class "Default")
 			(node
 				(ref "U3")
-				(pin "14")
-				(pinfunction "D10/GPIO10_14")
+				(pin "11")
+				(pinfunction "D10/GPIO10_11")
 				(pintype "bidirectional+no_connect")
 			)
 		)

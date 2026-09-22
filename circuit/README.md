@@ -69,6 +69,26 @@ circuit/
     自作フットプリント (`Local:Seeed_XIAO_ESP32C3`、`Local.pretty/` に格納)。
     XIAO本体は基板に直接ハンダ付けせず、2×7・2.54mmピッチの丸ピンICソケット
     経由で着脱する前提のフットプリントです（詳細はBOM.md）。
+
+### XIAOのピン配置（重要）
+
+Seeed公式のピン配置資料で実機を確認したところ、5V/GND/3V3はUSBコネクタ側の
+先頭ピンではなく、**右列の末尾に固まって配置**されています。本プロジェクトの
+シンボル・フットプリントは以下の実物理配置に合わせてあります。
+
+| 物理ピン番号 | 左列 (USB側が上) | | 物理ピン番号 | 右列 (USB側が上) |
+|---|---|---|---|---|
+| 1 | D0 / GPIO2 (ストラッピング) | | 8 | D7 / GPIO20 |
+| 2 | **D1 / GPIO3 → リレー制御** | | 9 | D8 / GPIO8 (ストラッピング) |
+| 3 | **D2 / GPIO4 → PLED監視** | | 10 | D9 / GPIO9 (ストラッピング) |
+| 4 | D3 / GPIO5 | | 11 | D10 / GPIO10 |
+| 5 | D4 / GPIO6 (SDA) | | 12 | **3V3** |
+| 6 | D5 / GPIO7 (SCL) | | 13 | **GND** |
+| 7 | D6 / GPIO21 (TX) | | 14 | 5V (未使用) |
+
+（列内は上から下がピン1→7、右列は下から上がピン8→14。KiCadの
+`Local:Seeed_XIAO_ESP32C3` シンボルおよび `Local.pretty/Seeed_XIAO_ESP32C3.kicad_mod`
+フットプリントのピン番号は上表と完全に一致しています。）
   - TLP225A(F) / TLP621-1: 自作の汎用4pinオプトカプラシンボル
     (`Local:Optocoupler_Generic_4Pin`、`Local.kicad_sym` に格納) ＋
     フットプリント `Package_DIP:DIP-4_W7.62mm_Socket`（ICソケット実装想定）
